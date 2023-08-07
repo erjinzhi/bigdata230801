@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.bigdata</groupId>
+    <artifactId>TestMaven</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>testchild</module>
+    </modules>
+
+    <!--任何一个maven项目只有三种打包方式
+       jar  将来打成jar包    java项目
+       war  将来打成一个war包  java web项目
+       pom  如果是这个值，说明该项目是一个主从项目
+       -->
+    <packaging>pom</packaging>
+
+
+    <!--定义每一个jar包的版本号-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.12.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+
+
+
+</project>
